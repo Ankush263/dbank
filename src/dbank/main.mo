@@ -2,12 +2,12 @@ import Debug "mo:base/Debug";
 
 
 actor DBank {
-  var currentValue = 300;
-  currentValue := 100;   //change the value to 100
+  stable var currentValue = 300;   //stable => it's like database, once you store a value in this, after reloading it can't changed.
+  //currentValue := 100;   //change the value to 100
 
   let id = 37483747423758;  //like const in js
 
-  // Debug.print(debug_show(id));
+  Debug.print(debug_show(id));
   // Debug.print(debug_show(currentValue));
 
   public func topUp(amount: Nat) {   //Nat -> Natural no.
