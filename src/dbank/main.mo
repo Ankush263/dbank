@@ -5,10 +5,11 @@ import Float "mo:base/Float";
 
 actor DBank {
   stable var currentValue: Float = 300;   //stable => it's like database, once you store a value in this, after reloading it can't changed.
-  //currentValue := 100;   //change the value to 100
+  currentValue := 300;   //change the value to 100
+  Debug.print(debug_show(currentValue));
 
   stable var startTime = Time.now();
-  Debug.print(debug_show(startTime));
+  // Debug.print(debug_show(startTime));
 
   let id = 37483747423758;  //let is like const in js
 
