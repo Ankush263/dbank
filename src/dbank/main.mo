@@ -4,8 +4,8 @@ import Float "mo:base/Float";
 
 
 actor DBank {
-  stable var currentValue: Float = 300;   //stable => it's like database, once you store a value in this, after reloading it can't changed.
-  currentValue := 300;   //change the value to 100
+  stable var currentValue: Float = 200;   //stable => it's like database, once you store a value in this, after reloading it can't changed.
+  currentValue := 200;   //change the value to 100
   Debug.print(debug_show(currentValue));
 
   stable var startTime = Time.now();
