@@ -1,8 +1,7 @@
 import { dbank } from "../../declarations/dbank"
 
 window.addEventListener("load", async () => {
-  const currentAmount = await dbank.checkBalance()
-  document.getElementById("value").innerText = currentAmount.toFixed(2)
+  update()
 })
 
 document.querySelector("form").addEventListener("submit", async (event) => {
@@ -23,10 +22,14 @@ document.querySelector("form").addEventListener("submit", async (event) => {
     await dbank.withdraw(withdrawlAmount)
   }
 
-  const currentAmount = await dbank.checkBalance()
-  document.getElementById("value").innerText = currentAmount.toFixed(2)
+  update()
 
   document.getElementById("input-amount").value = ""
   document.getElementById("withdrawal-amount").value = ""
   button.removeAttribute("disabled")
 })
+
+async function update() {
+  const currentAmount = await dbank.checkBalance()
+  document.getElementById("value").innerText = currentAmount.toFixed(2)
+}
