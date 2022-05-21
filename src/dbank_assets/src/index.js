@@ -22,6 +22,8 @@ document.querySelector("form").addEventListener("submit", async (event) => {
     await dbank.withdraw(withdrawlAmount)
   }
 
+  await dbank.compound()
+
   update()
 
   document.getElementById("input-amount").value = ""
